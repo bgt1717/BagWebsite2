@@ -100,16 +100,17 @@ body, html {
   transform: scale(1.05);
 }
 
-/* Single Image Page */
 .single-image-page {
   text-align: center;
   padding: 2rem;
 }
 
 .single-image-page img {
-  max-width: 90%;
+  max-width: 50%;        /* smaller size */
+  height: auto;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
 }
 
 .single-image-page a {
@@ -122,6 +123,7 @@ body, html {
 .single-image-page a:hover {
   text-decoration: underline;
 }
+
 
 /* Footer */
 .footer {

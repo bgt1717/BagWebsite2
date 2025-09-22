@@ -21,7 +21,7 @@ export default function ImagePage() {
       <main className="single-image-page" style={{ textAlign: "center", padding: "2rem" }}>
         <Link to="/gallery">← Back to Gallery</Link>
         <div style={{ marginTop: "1rem" }}>
-          <img src={imageSrc} alt={`Gallery ${id}`} style={{ maxWidth: "90%", borderRadius: "10px" }} />
+          <img src={imageSrc} alt={`Gallery ${id}`} style={{ maxWidth: "50%", borderRadius: "10px" }} />
         </div>
       </main>
       <Footer />
