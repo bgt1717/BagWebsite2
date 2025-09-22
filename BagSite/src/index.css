@@ -100,7 +100,7 @@ body {
 }
 
 .gallery img:hover {
-  transform: scale(2);       /* 2x enlargement */
+  transform: scale(1.05);       /* 1.2x enlargement */
   z-index: 10;               /* Bring the hovered image above others */
 }
 
