@@ -1,13 +1,31 @@
-/* Reset */
+/* Reset & base styles */
 body, html {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
+  background: url("/Pictures/1.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  height: 100%;
 }
 
-/* Container */
+/* White transparent overlay across whole site */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.6); /* semi-transparent white */
+  z-index: -1;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -15,83 +33,82 @@ body, html {
 }
 
 /* Navbar */
-.navbar {
+nav {
+  background: rgba(0, 119, 204, 0.9); /* slightly transparent blue */
+  color: white;
+  padding: 15px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #007bff;
-  color: white;
-  padding: 1rem 2rem;
 }
 
-.navbar ul {
-  display: flex;
-  gap: 1.5rem;
+nav h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+nav ul {
   list-style: none;
+  display: flex;
+  gap: 20px;
   margin: 0;
   padding: 0;
 }
 
-.navbar li {
+nav li {
   cursor: pointer;
 }
 
-.navbar a {
-  color: white;
-  text-decoration: none;
-}
-
-.navbar a:hover {
+nav li:hover {
   text-decoration: underline;
 }
 
-/* Hero Section */
+/* Hero section */
 .hero {
   flex: 1;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 2rem;
-  background-color: #f2f2f2;
+  color: #222;
+  padding: 40px;
 }
 
-.hero h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+.hero .overlay {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 40px;
+  border-radius: 10px;
 }
 
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
-}
-
-.hero button {
-  background-color: #007bff;
+/* Buttons */
+button {
+  background-color: #0077cc;
   color: white;
+  padding: 12px 24px;
+  font-size: 1rem;
   border: none;
-  padding: 0.8rem 1.5rem;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background 0.3s ease;
+  margin-top: 20px;
 }
 
-.hero button:hover {
-  background-color: #0056b3;
+button:hover {
+  background-color: #005fa3;
 }
 
-/* Gallery Grid */
+/* Gallery grid */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1rem;
-  padding: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  padding: 20px;
 }
 
 .gallery img {
   width: 100%;
-  border-radius: 5px;
+  height: auto;
+  border-radius: 8px;
   cursor: pointer;
   transition: transform 0.3s ease;
 }
@@ -100,35 +117,65 @@ body, html {
   transform: scale(1.05);
 }
 
-.single-image-page {
-  text-align: center;
-  padding: 2rem;
+/* Image detail page */
+.image-detail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 20px;
 }
 
-.single-image-page img {
-  max-width: 50%;        /* smaller size */
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  transition: transform 0.3s ease;
+.image-detail img {
+  max-width: 600px;
+  width: 100%;
+  border-radius: 8px;
 }
-
-.single-image-page a {
-  display: inline-block;
-  margin-bottom: 1rem;
-  color: #007bff;
-  text-decoration: none;
-}
-
-.single-image-page a:hover {
-  text-decoration: underline;
-}
-
 
 /* Footer */
-.footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: #007bff;
+footer {
+  background: rgba(0, 119, 204, 0.9);
   color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: auto;
+}
+
+/* About page styling */
+.about-section {
+  padding: 3rem;
+  text-align: center;
+}
+
+.about-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.about-section p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.events-section {
+  padding: 3rem;
+  text-align: center;
+}
+
+.events-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.events-section ul {
+  list-style: none;
+  padding: 0;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.events-section li {
+  margin-bottom: 1rem;
 }

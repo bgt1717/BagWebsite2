@@ -6,12 +6,12 @@ export default function Events() {
   return (
     <div className="container">
       <Navbar />
-      <main className="section">
+      <main className="events-section">
         <h2>Scheduled Events</h2>
         <ul>
-          <li>React Workshop - Sept 25</li>
-          <li>Gallery Launch - Oct 5</li>
-          <li>Community Meetup - Oct 20</li>
+          <li>Barton Creek Mall Farmer's Market - Sept 25</li>
+          <li>Event 2 - Oct 5</li>
+          <li>Event 3 - Oct 20</li>
         </ul>
       </main>
       <Footer />

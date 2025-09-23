@@ -2,23 +2,22 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import img1 from "../Pictures/1.jpg";
-import img2 from "../Pictures/2.jpg";
-import img3 from "../Pictures/3.jpg";
-import img4 from "../Pictures/4.jpg";
-import img5 from "../Pictures/5.jpg";
-import img6 from "../Pictures/6.jpg";
 
 export default function Gallery() {
-  const images = [img1, img2, img3, img4, img5, img6];
+  const imageCount = 6; // number of images
+  const images = Array.from({ length: imageCount }, (_, i) => i + 1); // [1,2,3,...6]
 
   return (
     <div className="container">
       <Navbar />
-      <main className="gallery">
-        {images.map((src, idx) => (
-          <Link key={idx} to={`/image/${idx + 1}`}>
-            <img src={src} alt={`Gallery ${idx + 1}`} />
+      <main className="gallery" style={{ padding: "2rem", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "1rem" }}>
+        {images.map((id) => (
+          <Link key={id} to={`/image/${id}`}>
+            <img
+              src={`/Pictures/${id}.jpg`}
+              alt={`Bag ${id}`}
+              style={{ width: "100%", borderRadius: "8px", cursor: "pointer", transition: "transform 0.3s ease" }}
+            />
           </Link>
         ))}
       </main>
@@ -26,5 +25,3 @@ export default function Gallery() {
     </div>
   );
 }
-
-

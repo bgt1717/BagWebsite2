@@ -5,7 +5,7 @@ import { Home as HomeIcon, Image, Info, Calendar } from "lucide-react";
 export default function Navbar() {
   return (
     <nav className="navbar">
-      <h1>My Website</h1>
+      <h1>ATX Bags</h1>
       <ul>
         <li>
           <Link to="/">
