@@ -34,7 +34,7 @@ a {
 
 /* Navbar */
 nav {
-  background: rgba(0, 119, 204, 0.9); /* slightly transparent blue */
+  background: #709170; /* updated green */
   color: white;
   padding: 15px 20px;
   display: flex;
@@ -82,7 +82,7 @@ nav li:hover {
 
 /* Buttons */
 button {
-  background-color: #0077cc;
+  background-color: #709170;
   color: white;
   padding: 12px 24px;
   font-size: 1rem;
@@ -94,7 +94,7 @@ button {
 }
 
 button:hover {
-  background-color: #005fa3;
+  background-color: #217021;
 }
 
 /* Gallery grid */
@@ -134,10 +134,10 @@ button:hover {
 
 /* Footer */
 footer {
-  background: rgba(0, 119, 204, 0.9);
+  background: #709170; /* updated green */
   color: white;
   text-align: center;
-  padding: 15px;
+  padding: 2px;
   margin-top: auto;
 }
 

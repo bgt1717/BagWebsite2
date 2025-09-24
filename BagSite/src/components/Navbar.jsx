@@ -5,7 +5,12 @@ import { Home as HomeIcon, Image, Info, Calendar } from "lucide-react";
 export default function Navbar() {
   return (
     <nav className="navbar">
-      <h1>ATX Bags</h1>
+      {/* Logo/Title links back to Home */}
+      <h1>
+        <Link to="/" style={{ color: "white", textDecoration: "none" }}>
+          ATX Bags
+        </Link>
+      </h1>
       <ul>
         <li>
           <Link to="/">
@@ -31,3 +36,4 @@ export default function Navbar() {
     </nav>
   );
 }
+

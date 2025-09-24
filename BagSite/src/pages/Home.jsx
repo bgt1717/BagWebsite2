@@ -9,7 +9,7 @@ export default function Home() {
       <Navbar />
       <header className="hero">
         <div className="overlay">
-          <h2>Handmade bags made in Austin Texas</h2>
+          <h2>Handmade bags in Austin Texas</h2>
           <p>Explore our gallery, learn about us, and check out our events!</p>
           <Link to="/gallery">
             <button>Gallery</button>
