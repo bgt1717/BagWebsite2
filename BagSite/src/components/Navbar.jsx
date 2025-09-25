@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Home as HomeIcon, Image, Info, Calendar } from "lucide-react";
+import { FaInstagram } from "react-icons/fa";
 
 export default function Navbar() {
   return (
@@ -31,6 +32,18 @@ export default function Navbar() {
           <Link to="/events">
             <Calendar size={18} /> Events
           </Link>
+        </li>
+        <li>
+
+        <a
+    href="https://www.instagram.com/yane_crafts/?igsh=ZmRkeHcyZXBmOXZ5#"
+    target="_blank"
+    rel="noopener noreferrer"
+    style={{ color: "#E1306C" }}
+  >
+    <FaInstagram size={24} />
+  </a>
+
         </li>
       </ul>
     </nav>
