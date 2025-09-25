@@ -8,30 +8,32 @@ export default function Events() {
     <div className="container">
       <Navbar />
       <main className="events-section">
-        <h2>Scheduled Events</h2>
-        <ul>
-          <li>Event 1 - Month XX </li>
-          <li>Event 2 - Month XX </li>
-          <li>Event 3 - Month XX </li>
-          <li>Event 4 - Month XX </li>
-          <li>Event 5 - Month XX </li>
-          <li>Event 6 - Month XX </li>
-          <li>Event 7 - Month XX </li>
-          <li>Event 8 - Month XX </li>
-          <li>Event 9 - Month XX </li>
-          <li>Event 10 - Month XX </li>
-        </ul>
+        <div className="overlay">
+          <h2>Scheduled Events</h2>
+          <ul>
+            <li>Event 1 - Month XX</li>
+            <li>Event 2 - Month XX</li>
+            <li>Event 3 - Month XX</li>
+            <li>Event 4 - Month XX</li>
+            <li>Event 5 - Month XX</li>
+            <li>Event 6 - Month XX</li>
+            <li>Event 7 - Month XX</li>
+            <li>Event 8 - Month XX</li>
+            <li>Event 9 - Month XX</li>
+            <li>Event 10 - Month XX</li>
+          </ul>
 
-        {/* Social icons */}
-        <div className="social-link">
-          <a
-            href="https://www.instagram.com/yane_crafts/?igsh=ZmRkeHcyZXBmOXZ5#"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ color: "#E1306C" }}
-          >
-            <FaInstagram />
-          </a>
+          {/* Social icons */}
+          <div className="social-link">
+            <a
+              href="https://www.instagram.com/yane_crafts/?igsh=ZmRkeHcyZXBmOXZ5#"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "#E1306C" }}
+            >
+              <FaInstagram />
+            </a>
+          </div>
         </div>
       </main>
       <Footer />
