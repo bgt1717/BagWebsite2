@@ -9,14 +9,14 @@ export default function ImagePage() {
   return (
     <div className="container">
       <Navbar />
-      <main className="single-image-page" style={{ textAlign: "center", padding: "2rem" }}>
+      <main className="single-image-page">
         <Link to="/gallery">
-        <button> ← Back to Gallery </button></Link>
+          <button>← Back to Gallery</button>
+        </Link>
         <div style={{ marginTop: "1rem" }}>
           <img
             src={`/Pictures/${id}.jpg`}
             alt={`Bag ${id}`}
-            style={{ maxWidth: "50%", borderRadius: "10px" }}
           />
         </div>
       </main>
