@@ -9,7 +9,7 @@ body, html {
   height: 100%;
 }
 
-/* Transparent overlay */
+/* White transparent overlay across whole site */
 body::before {
   content: "";
   position: fixed;
@@ -33,12 +33,14 @@ a {
 
 /* Navbar */
 nav {
-  background: #709170;
+  background: #709170; /* navbar color */
   color: white;
   padding: 15px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  z-index: 10;
 }
 
 nav h1 {
@@ -52,7 +54,6 @@ nav ul {
   gap: 20px;
   margin: 0;
   padding: 0;
-  align-items: center;
 }
 
 nav li {
@@ -63,17 +64,65 @@ nav li:hover {
   text-decoration: underline;
 }
 
-nav .instagram-icon {
-  font-size: 1.8rem;
+/* Hamburger button */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: white;
+}
+
+/* Vertical overlay menu */
+.nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7); /* transparent overlay */
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  flex-direction: column;
+}
+
+.nav-overlay.open {
+  display: flex;
+}
+
+.nav-overlay .menu-items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.nav-overlay .menu-items a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #709170;
+  border-radius: 30px;
+  padding: 12px 20px;
+  color: white;
+  font-size: 1.5rem;
+  text-decoration: none;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-nav .instagram-icon:hover {
-  transform: scale(1.2);
+.nav-overlay .menu-items a span {
+  font-size: 1.2rem; /* label next to icon */
+}
+
+.nav-overlay .menu-items a:hover {
+  transform: scale(1.05);
   opacity: 0.8;
 }
 
-/* Hero, About, Events overlays */
+/* Hero, About, Events overlay bubble */
 .hero, .about-section, .events-section {
   flex: 1;
   display: flex;
@@ -83,9 +132,7 @@ nav .instagram-icon:hover {
   padding: 40px;
 }
 
-.hero .overlay, 
-.about-section .overlay, 
-.events-section .overlay {
+.hero .overlay, .about-section .overlay, .events-section .overlay {
   background-color: rgba(255, 255, 255, 0.8);
   padding: 40px;
   border-radius: 10px;
@@ -108,13 +155,13 @@ button:hover {
   background-color: #3da33d;
 }
 
-/* Gallery grid */
+/* Gallery */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 15px;
   padding: 20px;
-  background-color: #605e5e; /* grey background */
+  background-color: #605e5e;
 }
 
 .gallery img {
@@ -133,21 +180,18 @@ button:hover {
 
 /* Image detail page */
 .single-image-page {
+  background-color: #605e5e;
+  flex: 1;
   display: flex;
-  flex-direction: column;
-  justify-content: center;   /* vertical centering */
-  align-items: center;       /* horizontal centering */
-  min-height: 80vh;
-  padding: 20px;
-  background-color: #605e5e; /* same grey as gallery */
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  padding: 2rem;
 }
 
 .single-image-page img {
-  max-width: 600px;
-  width: 100%;
+  max-width: 50%;
   border-radius: 10px;
-  margin-top: 1rem;
 }
 
 /* Footer */
@@ -159,9 +203,8 @@ footer {
   margin-top: auto;
 }
 
-/* About section */
-.about-section h2, 
-.events-section h2 {
+/* About & Events styling */
+.about-section h2, .events-section h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
 }
@@ -173,7 +216,6 @@ footer {
   margin: 0 auto;
 }
 
-/* Events section */
 .events-section ul {
   list-style: none;
   padding: 0;
@@ -185,7 +227,7 @@ footer {
   font-size: 1.1rem;
 }
 
-/* Social icons (Events page) */
+/* Social icons */
 .social-link {
   margin-top: 2rem;
   display: flex;
@@ -211,3 +253,14 @@ footer {
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
   margin-top: 2rem;
 }
+
+/* Responsive Hamburger Menu */
+@media (max-width: 650px) {
+  nav ul {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+}
+
