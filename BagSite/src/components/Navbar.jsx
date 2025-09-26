@@ -12,6 +12,7 @@ export default function Navbar() {
           ATX Bags
         </Link>
       </h1>
+
       <ul>
         <li>
           <Link to="/">
@@ -33,20 +34,18 @@ export default function Navbar() {
             <Calendar size={18} /> Events
           </Link>
         </li>
+        {/* Instagram icon link */}
         <li>
-
-        <a
-    href="https://www.instagram.com/yane_crafts/?igsh=ZmRkeHcyZXBmOXZ5#"
-    target="_blank"
-    rel="noopener noreferrer"
-    style={{ color: "#E1306C" }}
-  >
-    <FaInstagram size={24} />
-  </a>
-
+          <a
+            href="https://www.instagram.com/yane_crafts/?igsh=ZmRkeHcyZXBmOXZ5#"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="nav-icon"
+          >
+            <FaInstagram size={22} />
+          </a>
         </li>
       </ul>
     </nav>
   );
 }
-
