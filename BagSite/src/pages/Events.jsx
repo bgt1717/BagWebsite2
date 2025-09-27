@@ -14,13 +14,6 @@ export default function Events() {
             <li>Event 1 - Month XX</li>
             <li>Event 2 - Month XX</li>
             <li>Event 3 - Month XX</li>
-            <li>Event 4 - Month XX</li>
-            <li>Event 5 - Month XX</li>
-            <li>Event 6 - Month XX</li>
-            <li>Event 7 - Month XX</li>
-            <li>Event 8 - Month XX</li>
-            <li>Event 9 - Month XX</li>
-            <li>Event 10 - Month XX</li>
           </ul>
 
           {/* Social icons */}
