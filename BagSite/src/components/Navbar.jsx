@@ -1,87 +1,88 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Home as HomeIcon, Image, Info, Calendar } from "lucide-react";
 import { FaInstagram } from "react-icons/fa";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+
+  const navLinks = [
+    { path: "/", label: "Home", icon: <HomeIcon size={18} /> },
+    { path: "/gallery", label: "Gallery", icon: <Image size={18} /> },
+    { path: "/about", label: "About Us", icon: <Info size={18} /> },
+    { path: "/events", label: "Events", icon: <Calendar size={18} /> },
+  ];
 
   return (
     <>
       <nav className="navbar">
         <h1>
-          <Link to="/" style={{ color: "white", textDecoration: "none" }}>
+          <NavLink to="/" className="logo">
             ATX Bags
-          </Link>
+          </NavLink>
         </h1>
 
-        <ul>
-          <li>
-            <Link to="/">
-              <HomeIcon size={18} /> Home
-            </Link>
-          </li>
-          <li>
-            <Link to="/gallery">
-              <Image size={18} /> Gallery
-            </Link>
-          </li>
-          <li>
-            <Link to="/about">
-              <Info size={18} /> About Us
-            </Link>
-          </li>
-          <li>
-            <Link to="/events">
-              <Calendar size={18} /> Events
-            </Link>
-          </li>
+        {/* Desktop Menu */}
+        <ul className="desktop-menu">
+          {navLinks.map((link) => (
+            <li key={link.path}>
+              <NavLink
+                to={link.path}
+                className={({ isActive }) => (isActive ? "active-link" : "")}
+              >
+                {link.icon} {link.label}
+              </NavLink>
+            </li>
+          ))}
           <li>
             <a
               href="https://www.instagram.com/yane_crafts/?igsh=ZmRkeHcyZXBmOXZ5#"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ color: "#E1306C", fontSize: "1.6rem" }}
+              className="instagram-link"
             >
               <FaInstagram />
             </a>
           </li>
         </ul>
 
-        {/* Hamburger button */}
-        <button className="hamburger" onClick={toggleMenu}>
+        {/* Hamburger Button */}
+        <button
+          className="hamburger"
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
+        >
           ☰
         </button>
       </nav>
 
       {/* Overlay Menu */}
-      <div className={`nav-overlay ${menuOpen ? "open" : ""}`}>
+      <div
+        className={`nav-overlay ${menuOpen ? "open" : ""}`}
+        onClick={(e) => e.target === e.currentTarget && setMenuOpen(false)}
+      >
         <div className="menu-items">
-          <Link to="/" onClick={toggleMenu}>
-            <HomeIcon size={24} />
-            <span>Home</span>
-          </Link>
-          <Link to="/gallery" onClick={toggleMenu}>
-            <Image size={24} />
-            <span>Gallery</span>
-          </Link>
-          <Link to="/about" onClick={toggleMenu}>
-            <Info size={24} />
-            <span>About</span>
-          </Link>
-          <Link to="/events" onClick={toggleMenu}>
-            <Calendar size={24} />
-            <span>Events</span>
-          </Link>
+          {navLinks.map((link) => (
+            <NavLink
+              key={link.path}
+              to={link.path}
+              onClick={toggleMenu}
+              className={({ isActive }) =>
+                `overlay-link ${isActive ? "active-link" : ""}`
+              }
+            >
+              {React.cloneElement(link.icon, { size: 24 })}
+              <span>{link.label}</span>
+            </NavLink>
+          ))}
           <a
             href="https://www.instagram.com/yane_crafts/?igsh=ZmRkeHcyZXBmOXZ5#"
             target="_blank"
             rel="noopener noreferrer"
             onClick={toggleMenu}
+            className="overlay-link instagram-link"
           >
             <FaInstagram size={24} />
             <span>Instagram</span>

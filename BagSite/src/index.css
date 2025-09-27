@@ -9,7 +9,6 @@ body, html {
   height: 100%;
 }
 
-/* White transparent overlay across whole site */
 body::before {
   content: "";
   position: fixed;
@@ -67,11 +66,13 @@ nav li:hover {
 /* Hamburger button */
 .hamburger {
   display: none;
-  font-size: 2rem;
+  font-size: 1.5rem; /* Adjusted to fit nav height */
   cursor: pointer;
   background: none;
   border: none;
   color: white;
+  height: 100%; /* same as navbar height */
+  line-height: 1; 
 }
 
 /* Vertical overlay menu */
@@ -87,17 +88,20 @@ nav li:hover {
   align-items: center;
   z-index: 1000;
   flex-direction: column;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .nav-overlay.open {
   display: flex;
+  opacity: 1;
 }
 
 .nav-overlay .menu-items {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  align-items: flex-start;
+  align-items: center; /* center instead of flex-start */
 }
 
 .nav-overlay .menu-items a {
@@ -114,7 +118,7 @@ nav li:hover {
 }
 
 .nav-overlay .menu-items a span {
-  font-size: 1.2rem; /* label next to icon */
+  font-size: 1.2rem;
 }
 
 .nav-overlay .menu-items a:hover {
@@ -199,7 +203,7 @@ footer {
   background: #709170;
   color: white;
   text-align: center;
-  padding: 2px;
+  padding: 10px; /* increased for readability */
   margin-top: auto;
 }
 
@@ -262,5 +266,15 @@ footer {
   .hamburger {
     display: block;
   }
+
+  /* Adjust nav-overlay menu for mobile */
+  .nav-overlay .menu-items a {
+    font-size: 1.2rem;
+    padding: 10px 18px;
+  }
 }
 
+/* Optional: active link highlighting */
+.active-link {
+  text-decoration: none;
+}
