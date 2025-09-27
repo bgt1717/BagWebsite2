@@ -204,21 +204,42 @@ button:hover {
   transform: scale(1.05);
 }
 
-/* Image detail page */
 .single-image-page {
-  background-color: #605e5e;
-  flex: 1;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  text-align: center;
+  justify-content: center;
+  min-height: 80vh;
   padding: 2rem;
+  background-color: #605e5e; /* match gallery background */
+  text-align: center;
+}
+
+.single-image-page button {
+  background-color: #709170;
+  color: white;
+  padding: 12px 24px;   /* slightly bigger for touch */
+  font-size: 1.05rem;   /* a little larger */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-bottom: 1.5rem;  /* pull button closer to navbar */
+}
+
+.single-image-page button:hover {
+  background-color: #3da33d;
 }
 
 .single-image-page img {
-  max-width: 50%;
+  width: 100%;         
+  max-width: 600px;    
+  height: auto;        
   border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.3);
 }
+
+
 
 /* Footer */
 footer {

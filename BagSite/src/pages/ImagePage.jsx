@@ -13,14 +13,13 @@ export default function ImagePage() {
         <Link to="/gallery">
           <button>← Back to Gallery</button>
         </Link>
-        <div style={{ marginTop: "1rem" }}>
-          <img
-            src={`/Pictures/${id}.jpg`}
-            alt={`Bag ${id}`}
-          />
-        </div>
+        <img
+          src={`/Pictures/${id}.jpg`}
+          alt={`Bag ${id}`}
+        />
       </main>
       <Footer />
     </div>
   );
 }
+
