@@ -287,6 +287,15 @@ footer {
   }
   .hamburger {
     display: block;
+    margin-top: 0px;
+    font-size: 2.0rem;
+    background: none;
+    cursor: pointer;
+    
+  }
+  .hamburger:hover {
+    background: none;
+    color: white; /* keep same color on hover */
   }
 
   .nav-overlay .menu-items a {
