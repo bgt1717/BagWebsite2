@@ -32,21 +32,21 @@ a {
 
 /* Navbar */
 nav {
-  background: #709170; /* navbar color */
+  background: #709170;
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
   z-index: 10;
-  height: 60px; /* fixed height */
-  padding: 0 20px; /* horizontal padding only */
+  height: 60px;
+  padding: 0 20px;
 }
 
 nav h1 {
   margin: 0;
   font-size: 1.5rem;
-  line-height: 60px; /* vertically aligned with navbar */
+  line-height: 60px;
 }
 
 nav ul {
@@ -61,14 +61,14 @@ nav ul {
 
 nav li {
   cursor: pointer;
-  display: flex;              /* ensure li contents align */
+  display: flex;
   align-items: center;
 }
 
 nav li a {
-  display: flex;              /* flex container for icon + text */
+  display: flex;
   align-items: center;
-  gap: 6px;                   /* spacing between icon and label */
+  gap: 6px;
   color: white;
   text-decoration: none;
   height: 100%;
@@ -76,12 +76,12 @@ nav li a {
 
 nav li a.instagram-link {
   font-size: 1.6rem;
-  color: #E1306C;             /* Instagram brand color */
+  color: #E1306C;
   line-height: 1;
 }
 
 nav li a.instagram-link:hover {
-  color: white;               /* hover effect consistent with other links */
+  color: white;
 }
 
 /* Hamburger button */
@@ -92,7 +92,6 @@ nav li a.instagram-link:hover {
   background: none;
   border: none;
   color: white;
-
 }
 
 /* Vertical overlay menu */
@@ -102,7 +101,7 @@ nav li a.instagram-link:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.9);
   display: none;
   justify-content: center;
   align-items: center;
@@ -127,10 +126,13 @@ nav li a.instagram-link:hover {
 .nav-overlay .menu-items a {
   display: flex;
   align-items: center;
+  justify-content: center;   /* center text/icons */
   gap: 12px;
   background-color: #709170;
   border-radius: 30px;
-  padding: 12px 20px;
+  padding: 15px 20px;        /* consistent padding */
+  min-width: 200px;          /* NEW: equal bubble width */
+  text-align: center;        /* NEW: centers text inside bubble */
   color: white;
   font-size: 1.5rem;
   text-decoration: none;
@@ -289,20 +291,14 @@ footer {
 
   .nav-overlay .menu-items a {
     font-size: 1.5rem;
-    padding: 30px 50px;
+    padding: 15px 20px;  /* keep padding balanced */
+    min-width: 200px;    /* enforce equal bubble size */
   }
 }
 
 /* Active link styling without underline */
 .active-link {
   text-decoration: none;
-  font-weight: bold; /* highlight current page */
-  color: white;
-}
-
-/* Active link styling without underline */
-.active-link {
-  text-decoration: none;
-  font-weight: bold; /* optional for emphasis */
+  font-weight: bold;
   color: white;
 }
