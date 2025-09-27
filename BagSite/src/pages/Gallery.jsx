@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 export default function Gallery() {
-  const imageCount = 15; // number of images
+  const imageCount = 15; // total number of images
   const images = Array.from({ length: imageCount }, (_, i) => i + 1);
 
   return (
@@ -16,6 +16,7 @@ export default function Gallery() {
             <img
               src={`/Pictures/${id}.jpg`}
               alt={`Bag ${id}`}
+              loading="lazy" // improves performance when scrolling
             />
           </Link>
         ))}
