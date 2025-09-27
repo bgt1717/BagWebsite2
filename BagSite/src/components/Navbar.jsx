@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Home as HomeIcon, Image, Info, Calendar } from "lucide-react";
-import { FaInstagram } from "react-icons/fa";
+import { FaFacebook, FaInstagram } from "react-icons/fa";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -86,6 +86,16 @@ export default function Navbar() {
           >
             <FaInstagram size={24} />
             <span>Instagram</span>
+          </a>
+          <a
+            href="https://www.facebook.com/share/16DT7cdLDy/"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={toggleMenu}
+            className="overlay-link instagram-link"
+          >
+            <FaFacebook size={24} />
+            <span>Facebook</span>
           </a>
         </div>
       </div>
