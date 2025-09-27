@@ -92,8 +92,7 @@ nav li a.instagram-link:hover {
   background: none;
   border: none;
   color: white;
-  height: 60px; /* same as navbar height */
-  line-height: 60px; /* vertically centered */
+
 }
 
 /* Vertical overlay menu */
@@ -289,8 +288,8 @@ footer {
   }
 
   .nav-overlay .menu-items a {
-    font-size: 1.2rem;
-    padding: 10px 18px;
+    font-size: 1.5rem;
+    padding: 30px 50px;
   }
 }
 
