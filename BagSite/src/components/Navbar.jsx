@@ -46,6 +46,16 @@ export default function Navbar() {
               <FaInstagram />
             </a>
           </li>
+          <li>
+            <a
+              href="https://www.facebook.com/share/16DT7cdLDy/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="facebook-link"
+            >
+              <FaFacebook />
+            </a>
+          </li>
         </ul>
 
         {/* Hamburger Button */}

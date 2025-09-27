@@ -75,12 +75,22 @@ nav li a {
 }
 
 nav li a.instagram-link {
-  font-size: 1.6rem;
+  font-size: 2.3rem;
   color: #E1306C;
   line-height: 1;
 }
 
 nav li a.instagram-link:hover {
+  color: white;
+}
+
+nav li a.facebook-link {
+  font-size: 2.3rem;
+  color: #5507f0;
+  line-height: 1;
+}
+
+nav li a.facebook-link:hover {
   color: white;
 }
 
