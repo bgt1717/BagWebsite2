@@ -197,6 +197,23 @@ nav li a.instagram-link:hover {
   opacity: 0.8;
 }
 
+.hero-buttons .hero-facebook {
+  display: flex;
+  align-items: center; /* vertical alignment with button */
+  font-size: 3.0rem;  
+  color: #5507f0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hero-facebook {
+  padding-top: 20px;
+}
+
+.hero-buttons .hero-facebook:hover {
+  transform: scale(1.2);
+  opacity: 0.8;
+}
+
 /* Buttons */
 button {
   background-color: #709170;

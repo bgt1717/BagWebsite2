@@ -11,7 +11,7 @@ export default function Navbar() {
   const navLinks = [
     { path: "/", label: "Home", icon: <HomeIcon size={18} /> },
     { path: "/gallery", label: "Gallery", icon: <Image size={18} /> },
-    { path: "/about", label: "About Us", icon: <Info size={18} /> },
+    /*({ path: "/about", label: "About Us", icon: <Info size={18} /> }, }*/
     { path: "/events", label: "Events", icon: <Calendar size={18} /> },
   ];
 

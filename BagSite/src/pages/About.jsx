@@ -10,10 +10,8 @@ export default function About() {
       <main className="about-section">
       <div className="overlay">
   <h2>About Us</h2>
-  <p>
-    We craft unique textured bags for everyday use or possibly a a thoughtful gift. 
-    Check us out on Instagram or check events to see us in person!
-  </p>
+  <p> We craft unique textured bags for everyday use and thoughtful gifts. </p>
+  <p> Please message us on instagram with the bag number if you would like to purchase a bag. </p>
 
   <Link to="/events">
     <button>Events</button>
