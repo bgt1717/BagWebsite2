@@ -164,6 +164,39 @@ nav li a.instagram-link:hover {
   border-radius: 10px;
 }
 
+/* Hero buttons container */
+.hero-buttons {
+  display: flex;
+  align-items: center;   /* vertically center button and icon */
+  justify-content: center; /* center horizontally in hero overlay */
+  gap: 1rem; /* space between button and icon */
+  margin-top: 20px;
+}
+
+.hero-buttons button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px; /* optional: set consistent height */
+}
+
+.hero-buttons .hero-instagram {
+  display: flex;
+  align-items: center; /* vertical alignment with button */
+  font-size: 3.0rem;  
+  color: #E1306C;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hero-instagram {
+  padding-top: 20px;
+}
+
+.hero-buttons .hero-instagram:hover {
+  transform: scale(1.2);
+  opacity: 0.8;
+}
+
 /* Buttons */
 button {
   background-color: #709170;

@@ -11,8 +11,7 @@ export default function About() {
       <div className="overlay">
   <h2>About Us</h2>
   <p>
-    We craft unique, textured bags that are as functional as they are beautiful. 
-    Each piece is perfect for everyday life—or as a thoughtful gift. 
+    We craft unique textured bags for everyday use or possibly a a thoughtful gift. 
     Check us out on Instagram or check events to see us in person!
   </p>
 
