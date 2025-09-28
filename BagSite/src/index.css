@@ -414,49 +414,53 @@ footer {
   color: white;
 }
 
+/* Back + Message block */
 .back-message {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 0.75rem;
   text-align: center;
 }
 
 .bag-caption {
-  font-size: 1.7rem;
+  font-size: 1.4rem;
   font-weight: bold;
 }
 
+/* Purchase message text */
 .purchase-text {
-  font-size: 1rem;
-  color: #333;
-  max-width: 600px;
-  line-height: 1.2;
+  font-size: 1.1rem;
+  max-width: 650px;
+  text-align: center;
 }
 
+/* Inline link with icon */
 .imgPage-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  text-decoration: none;
+  display: inline-flex;      /* inline + flex for alignment */
+  align-items: center;       /* vertically center icon + text */
+  gap: 0.3rem;               /* small space between text & icon */
   font-weight: bold;
-  color: #333;
-  transition: opacity 0.3s ease;
+  text-decoration: none;
+  color: inherit;
 }
 
 .imgPage-link:hover {
-  opacity: 0.7;
+  opacity: 0.75;
 }
 
+/* Social icons sizing */
 .social-icon {
-  font-size: 1.8rem;
-  vertical-align: middle;
+  font-size: 1rem;           /* match text height */
+  line-height: 1;            /* prevent extra spacing */
+  vertical-align: middle;    /* align with text middle */
 }
 
+/* Brand colors */
 .social-icon.facebook {
-  color: #1877F2; /* Facebook blue */
+  color: #1877F2;
 }
 
 .social-icon.instagram {
-  color: #E1306C; /* Instagram pink */
+  color: #E1306C;
 }
-

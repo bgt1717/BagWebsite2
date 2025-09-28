@@ -21,26 +21,27 @@ export default function ImagePage() {
           </figcaption>
 
           <p className="purchase-text">
-            Message us on{" "}
-            <a
-              href="https://www.facebook.com/share/16DT7cdLDy/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="imgPage-link"
-            >
-              <FaFacebook className="social-icon facebook" /> Facebook
-            </a>{" "}
-            or{" "}
-            <a
-              href="https://www.instagram.com/yane_crafts/?igsh=ZmRkeHcyZXBmOXZ5#"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="imgPage-link"
-            >
-              <FaInstagram className="social-icon instagram" /> Instagram
-            </a>{" "} 
-            with bag number <strong>{id}</strong> to purchase.
-          </p>
+  Message us on{" "}
+  <a
+    href="https://www.facebook.com/share/16DT7cdLDy/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="imgPage-link"
+  >
+    Facebook <FaFacebook className="social-icon facebook" />
+  </a>{" "}
+  or{" "}
+  <a
+    href="https://www.instagram.com/yane_crafts/?igsh=ZmRkeHcyZXBmOXZ5#"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="imgPage-link"
+  >
+    Instagram <FaInstagram className="social-icon instagram" />
+  </a>{" "}
+  with bag number <strong>{id}</strong> to purchase.
+</p>
+
         </div>
 
         <figure className="single-image-figure">
