@@ -15,18 +15,6 @@ export default function Events() {
             <li>Event 2 - Month XX</li>
             <li>Event 3 - Month XX</li>
           </ul>
-
-          {/* Social icons */}
-          <div className="social-link">
-            <a
-              href="https://www.instagram.com/yane_crafts/?igsh=ZmRkeHcyZXBmOXZ5#"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ color: "#E1306C" }}
-            >
-              <FaInstagram />
-            </a>
-          </div>
         </div>
       </main>
       <Footer />
