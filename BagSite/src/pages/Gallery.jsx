@@ -12,13 +12,18 @@ export default function Gallery() {
       <Navbar />
       <main className="gallery">
         {images.map((id) => (
-          <Link key={id} to={`/image/${id}`}>
-            <img
-              src={`/Pictures/${id}.jpg`}
-              alt={`Bag ${id}`}
-              loading="lazy" // improves performance when scrolling
-            />
-          </Link>
+          <figure key={id} className="gallery-item">
+            <Link to={`/image/${id}`}>
+              <img
+                src={`/Pictures/${id}.jpg`}
+                alt={`Bag ${id}`}
+                loading="lazy"
+              />
+            </Link>
+            <figcaption>
+              Bag {id}
+            </figcaption>
+          </figure>
         ))}
       </main>
       <Footer />
