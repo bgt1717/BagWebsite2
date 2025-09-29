@@ -5,7 +5,7 @@ import { FaInstagram } from "react-icons/fa";
 
 export default function Events() {
   return (
-    <div className="container">
+    <div className="container events-page">
       <Navbar />
       <main className="events-section">
         <div className="overlay">

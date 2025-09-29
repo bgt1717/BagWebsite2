@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export default function About() {
   return (
-    <div className="container">
+    <div className="container about-page">
       <Navbar />
       <main className="about-section">
       <div className="overlay">

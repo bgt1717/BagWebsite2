@@ -20,9 +20,7 @@ export default function Gallery() {
                 loading="lazy"
               />
             </Link>
-            <figcaption>
-              Bag {id}
-            </figcaption>
+            <figcaption>Bag {id}</figcaption>
           </figure>
         ))}
       </main>

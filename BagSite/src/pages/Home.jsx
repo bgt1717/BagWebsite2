@@ -6,7 +6,7 @@ import { FaFacebook, FaInstagram } from "react-icons/fa";
 
 export default function Home() {
   return (
-    <div className="container">
+    <div className="container home-page">
       <Navbar />
       <header className="hero">
         <div className="overlay">
