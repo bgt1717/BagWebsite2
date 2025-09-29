@@ -458,6 +458,7 @@ footer {
 .bag-caption {
   font-size: 1.4rem;
   font-weight: bold;
+  padding-top: 25px;
 }
 
 /* Purchase message text */
