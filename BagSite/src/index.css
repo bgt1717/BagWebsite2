@@ -39,6 +39,7 @@ body {
 .gallery,
 .single-image-page {
   background: #605e5e;
+  font-weight: bold;
 }
 
 @media (max-width: 650px) {
