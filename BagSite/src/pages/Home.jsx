@@ -19,22 +19,13 @@ export default function Home() {
               <button>Gallery</button>
             </Link>
             <a
-              href="https://www.instagram.com/yane_crafts/?igsh=ZmRkeHcyZXBmOXZ5#"
+              href="https://www.instagram.com/townmadecraftsatx/?hl=en"
               target="_blank"
               rel="noopener noreferrer"
               className="hero-instagram"
             >
             
               <FaInstagram />
-            </a>
-            <a
-              href="https://www.instagram.com/yane_crafts/?igsh=ZmRkeHcyZXBmOXZ5#"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hero-facebook"
-            >
-            
-              <FaFacebook />
             </a>
           </div>
         </div>

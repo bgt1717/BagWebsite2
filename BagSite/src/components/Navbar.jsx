@@ -38,22 +38,12 @@ export default function Navbar() {
           ))}
           <li>
             <a
-              href="https://www.instagram.com/yane_crafts/?igsh=ZmRkeHcyZXBmOXZ5#"
+              href="https://www.instagram.com/townmadecraftsatx/?hl=en"
               target="_blank"
               rel="noopener noreferrer"
               className="instagram-link"
             >
               <FaInstagram />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.facebook.com/share/16DT7cdLDy/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="facebook-link"
-            >
-              <FaFacebook />
             </a>
           </li>
         </ul>
@@ -88,7 +78,7 @@ export default function Navbar() {
             </NavLink>
           ))}
           <a
-            href="https://www.instagram.com/yane_crafts/?igsh=ZmRkeHcyZXBmOXZ5#"
+            href="https://www.instagram.com/townmadecraftsatx/?hl=en"
             target="_blank"
             rel="noopener noreferrer"
             onClick={toggleMenu}
@@ -96,16 +86,6 @@ export default function Navbar() {
           >
             <FaInstagram size={24} />
             <span>Instagram</span>
-          </a>
-          <a
-            href="https://www.facebook.com/share/16DT7cdLDy/"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={toggleMenu}
-            className="overlay-link instagram-link"
-          >
-            <FaFacebook size={24} />
-            <span>Facebook</span>
           </a>
         </div>
       </div>

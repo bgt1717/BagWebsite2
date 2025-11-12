@@ -19,16 +19,7 @@ export default function ImagePage() {
           <p className="purchase-text">
             Message us on{" "}
             <a
-              href="https://www.facebook.com/share/16DT7cdLDy/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="imgPage-link"
-            >
-              Facebook <FaFacebook className="social-icon facebook" />
-            </a>{" "}
-            or{" "}
-            <a
-              href="https://www.instagram.com/yane_crafts/?igsh=ZmRkeHcyZXBmOXZ5#"
+              href="https://www.instagram.com/townmadecraftsatx/?hl=en"
               target="_blank"
               rel="noopener noreferrer"
               className="imgPage-link"
