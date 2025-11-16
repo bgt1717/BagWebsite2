@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Home as HomeIcon, Image, Info, Calendar } from "lucide-react";
-import { FaFacebook, FaInstagram } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaEtsy } from "react-icons/fa";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -11,7 +11,6 @@ export default function Navbar() {
   const navLinks = [
     { path: "/", label: "Home", icon: <HomeIcon size={18} /> },
     { path: "/gallery", label: "Gallery", icon: <Image size={18} /> },
-    /*({ path: "/about", label: "About Us", icon: <Info size={18} /> }, }*/
     { path: "/events", label: "Events", icon: <Calendar size={18} /> },
   ];
 
@@ -30,12 +29,16 @@ export default function Navbar() {
             <li key={link.path}>
               <NavLink
                 to={link.path}
-                className={({ isActive }) => (isActive ? "active-link" : "")}
+                className={({ isActive }) =>
+                  isActive ? "active-link" : ""
+                }
               >
                 {link.icon} {link.label}
               </NavLink>
             </li>
           ))}
+
+          {/* Instagram */}
           <li>
             <a
               href="https://www.instagram.com/townmadecraftsatx/?hl=en"
@@ -44,6 +47,18 @@ export default function Navbar() {
               className="instagram-link"
             >
               <FaInstagram />
+            </a>
+          </li>
+
+          {/* Etsy */}
+          <li>
+            <a
+              href="https://townmadecraftsatx.etsy.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="etsy-link"
+            >
+              <FaEtsy />
             </a>
           </li>
         </ul>
@@ -77,6 +92,8 @@ export default function Navbar() {
               <span>{link.label}</span>
             </NavLink>
           ))}
+
+          {/* Instagram */}
           <a
             href="https://www.instagram.com/townmadecraftsatx/?hl=en"
             target="_blank"
@@ -87,7 +104,18 @@ export default function Navbar() {
             <FaInstagram size={24} />
             <span>Instagram</span>
           </a>
-          
+
+          {/* Etsy */}
+          <a
+            href="https://townmadecraftsatx.etsy.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={toggleMenu}
+            className="overlay-link etsy-link"
+          >
+            <FaEtsy size={24} />
+            <span>Etsy</span>
+          </a>
         </div>
       </div>
     </>

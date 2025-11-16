@@ -11,7 +11,7 @@ export default function About() {
       <div className="overlay">
   <h2>About Us</h2>
   <p> We craft unique textured bags for everyday use and thoughtful gifts. </p>
-  <p> Please message us on instagram with the bag number if you would like to purchase a bag. </p>
+  <p> Check out our Etsy to make a purchase and follow us on Instagram! </p>
 
   <Link to="/events">
     <button>Events</button>

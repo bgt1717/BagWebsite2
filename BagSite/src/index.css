@@ -515,3 +515,19 @@ footer {
   transform: scale(1.2);
   opacity: 0.8;
 }
+
+nav li a.etsy-link {
+  font-size: 2.3rem;
+  color: #F1641E; /* Etsy orange */
+  line-height: 1;
+}
+
+nav li a.etsy-link:hover {
+  color: white;
+}
+
+.nav-overlay .etsy-link {
+  font-size: 1.5rem;
+  background-color: #709170; /* matches other bubbles */
+  color: #F1641E;
+}
