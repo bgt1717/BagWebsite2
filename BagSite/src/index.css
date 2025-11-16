@@ -498,3 +498,20 @@ footer {
 .social-icon.instagram {
   color: #E1306C;
 }
+
+.hero-buttons .hero-etsy {
+  display: flex;
+  align-items: center;
+  font-size: 3.0rem;
+  color: #F1641E; /* Etsy brand orange */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hero-etsy {
+  padding-top: 20px;
+}
+
+.hero-buttons .hero-etsy:hover {
+  transform: scale(1.2);
+  opacity: 0.8;
+}
