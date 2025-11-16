@@ -27,6 +27,7 @@ export default function Home() {
             
               <FaInstagram />
             </a>
+            
           </div>
         </div>
       </header>

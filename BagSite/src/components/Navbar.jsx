@@ -87,6 +87,7 @@ export default function Navbar() {
             <FaInstagram size={24} />
             <span>Instagram</span>
           </a>
+          
         </div>
       </div>
     </>

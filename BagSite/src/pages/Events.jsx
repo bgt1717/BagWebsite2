@@ -11,9 +11,7 @@ export default function Events() {
         <div className="overlay">
           <h2>Scheduled Events</h2>
           <ul>
-            <li>Event 1 - Month XX</li>
-            <li>Event 2 - Month XX</li>
-            <li>Event 3 - Month XX</li>
+            <li>No events are currently planned. Stay tuned!</li>
           </ul>
         </div>
       </main>
