@@ -12,7 +12,7 @@ export default function Home() {
         <div className="overlay">
           <h2>Handmade bags in Austin Texas</h2>
           <p>We craft unique textured bags for everyday use and thoughtful gifts.</p>
-          <p>Check out our Etsy to make a purchase and please follow us on Instagram!</p>
+          <p>Please follow us on Instagram and check out our Etsy to make a purchase. </p>
 
           <div className="hero-buttons">
             <Link to="/gallery">

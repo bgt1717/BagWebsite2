@@ -19,7 +19,7 @@ export default function Navbar() {
       <nav className="navbar">
         <h1>
           <NavLink to="/" className="logo">
-            ATX Bags
+            TownMadeCraftsATX
           </NavLink>
         </h1>
 
