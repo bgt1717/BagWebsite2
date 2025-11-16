@@ -16,7 +16,7 @@ export default function ImagePage() {
             <button>← Back to Gallery</button>
           </Link>
 
-          <p className="purchase-text">
+          {/* <p className="purchase-text">
             Message us on{" "}
             <a
               href="https://www.instagram.com/townmadecraftsatx/?hl=en"
@@ -27,12 +27,12 @@ export default function ImagePage() {
               Instagram <FaInstagram className="social-icon instagram" />
             </a>{" "}
             with bag number <strong>{id}</strong> to purchase.
-          </p>
+          </p> */}
         </div>
 
         <figure className="single-image-figure">
           <img src={`/Pictures/${id}.jpg`} alt={`Bag ${id}`} />
-          <figcaption className="bag-caption">Bag {id}</figcaption>
+          {/* <figcaption className="bag-caption">Bag {id}</figcaption> */}
         </figure>
       </main>
       <Footer />
