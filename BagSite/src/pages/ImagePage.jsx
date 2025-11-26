@@ -1,41 +1,33 @@
 import React from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { FaFacebook, FaInstagram } from "react-icons/fa";
 
-export default function ImagePage() {
+export default function SingleImage() {
   const { id } = useParams();
+  const navigate = useNavigate();
 
   return (
     <div className="container">
       <Navbar />
+
       <main className="single-image-page">
-        <div className="back-message">
-          <Link to="/gallery">
-            <button>← Back to Gallery</button>
-          </Link>
 
-          {/* <p className="purchase-text">
-            Message us on{" "}
-            <a
-              href="https://www.instagram.com/townmadecraftsatx/?hl=en"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="imgPage-link"
-            >
-              Instagram <FaInstagram className="social-icon instagram" />
-            </a>{" "}
-            with bag number <strong>{id}</strong> to purchase.
-          </p> */}
-        </div>
+        {/* FULL-SIZE IMAGE */}
+        <img 
+          src={`/Pictures/${id}.jpg`} 
+          alt={`Bag ${id}`}
+        />
 
-        <figure className="single-image-figure">
-          <img src={`/Pictures/${id}.jpg`} alt={`Bag ${id}`} />
-          {/* <figcaption className="bag-caption">Bag {id}</figcaption> */}
-        </figure>
+        {/* BUTTON BENEATH IMAGE */}
+        <button onClick={() => navigate(-1)}>
+          Back to Gallery
+        </button>
+
       </main>
+
       <Footer />
     </div>
   );
 }
+
