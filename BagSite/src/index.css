@@ -283,9 +283,8 @@ button:hover {
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-  gap: 5px;
-  padding: 10px;
   background-color: #605e5e;
+  padding-bottom: 20px;
 }
 
 .gallery img {
