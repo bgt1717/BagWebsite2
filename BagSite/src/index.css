@@ -1,12 +1,16 @@
 /* Reset & base styles */
+* {
+  box-sizing: border-box;
+}
+
 body, html {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
   color: black;
   height: 100%;
-    max-width: 100%;
-  overflow-x: hidden;   /* stops horizontal scrolling */
+  max-width: 100%;
+  overflow-x: hidden;   /* prevents horizontal scroll */
 }
 
 /* Default background for all pages (solid color, no image) */
@@ -41,13 +45,13 @@ body {
 .gallery,
 .single-image-page img {
   width: 100%;
-  max-width: 2500px;   /* 3 times bigger */
+  max-width: 2500px; /* full-size image */
   height: auto;
   border-radius: 10px;
   box-shadow: 0px 4px 12px rgba(0,0,0,0.3);
 }
 
-
+/* Responsive backgrounds */
 @media (max-width: 650px) {
   .home-page,
   .about-page,
@@ -58,12 +62,13 @@ body {
   }
 }
 
-
+/* Links */
 a {
   text-decoration: none;
   color: inherit;
 }
 
+/* Container */
 .container {
   display: flex;
   flex-direction: column;
@@ -80,13 +85,17 @@ nav {
   position: relative;
   z-index: 10;
   height: 60px;
-  padding: 0 20px;
+  width: 100vw;
+  max-width: 100vw;
+  overflow: hidden;
+  padding: 0 16px;
 }
 
 nav h1 {
   margin: 0;
   font-size: 1.5rem;
   line-height: 60px;
+  flex-shrink: 0;
 }
 
 nav ul {
@@ -97,6 +106,7 @@ nav ul {
   padding: 0;
   height: 100%;
   align-items: center;
+  flex-shrink: 0;
 }
 
 nav li {
@@ -114,35 +124,59 @@ nav li a {
   height: 100%;
 }
 
+/* Social icons in navbar */
 nav li a.instagram-link {
   font-size: 2.3rem;
   color: #E1306C;
   line-height: 1;
 }
-
 nav li a.instagram-link:hover {
   color: white;
 }
-
 nav li a.facebook-link {
   font-size: 2.3rem;
   color: #5507f0;
   line-height: 1;
 }
-
 nav li a.facebook-link:hover {
+  color: white;
+}
+nav li a.etsy-link {
+  font-size: 2.3rem;
+  color: #F1641E;
+  line-height: 1;
+}
+nav li a.etsy-link:hover {
   color: white;
 }
 
 /* Hamburger button */
 .hamburger {
-  display: none;
-  font-size: 1.5rem;
-  cursor: pointer;
+  display: none;           /* hidden on desktop */
+  font-size: 2rem;
   background: none;
   border: none;
   color: white;
+
+  /* Flex centering */
+  display: flex;
+  align-items: center;     /* vertical center */
+  justify-content: center;
+
+  height: 60px;            /* same as navbar height */
+  margin: 0;               /* remove any extra margin */
+  padding: 0;              /* remove any extra padding */
+  line-height: 1;          /* prevent line-height adding space */
+  cursor: pointer;
 }
+
+/* Show on mobile */
+@media (max-width: 650px) {
+  .hamburger {
+    display: flex;
+  }
+}
+
 
 /* Vertical overlay menu */
 .nav-overlay {
@@ -176,13 +210,13 @@ nav li a.facebook-link:hover {
 .nav-overlay .menu-items a {
   display: flex;
   align-items: center;
-  justify-content: center;   /* center text/icons */
+  justify-content: center;
   gap: 12px;
   background-color: #709170;
   border-radius: 30px;
-  padding: 15px 20px;        /* consistent padding */
-  min-width: 200px;          /* NEW: equal bubble width */
-  text-align: center;        /* NEW: centers text inside bubble */
+  padding: 15px 20px;
+  min-width: 200px;
+  text-align: center;
   color: white;
   font-size: 1.5rem;
   text-decoration: none;
@@ -217,9 +251,9 @@ nav li a.facebook-link:hover {
 /* Hero buttons container */
 .hero-buttons {
   display: flex;
-  align-items: center;   /* vertically center button and icon */
-  justify-content: center; /* center horizontally in hero overlay */
-  gap: 1rem; /* space between button and icon */
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
   margin-top: 20px;
 }
 
@@ -227,39 +261,23 @@ nav li a.facebook-link:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 48px; /* optional: set consistent height */
+  height: 48px;
 }
 
-.hero-buttons .hero-instagram {
+/* Social buttons in hero */
+.hero-buttons .hero-instagram, .hero-buttons .hero-facebook, .hero-buttons .hero-etsy {
   display: flex;
-  align-items: center; /* vertical alignment with button */
-  font-size: 3.0rem;  
-  color: #E1306C;
+  align-items: center;
+  font-size: 3rem;
   transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.hero-instagram {
   padding-top: 20px;
 }
-
-.hero-buttons .hero-instagram:hover {
-  transform: scale(1.2);
-  opacity: 0.8;
-}
-
-.hero-buttons .hero-facebook {
-  display: flex;
-  align-items: center; /* vertical alignment with button */
-  font-size: 3.0rem;  
-  color: #5507f0;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.hero-facebook {
-  padding-top: 20px;
-}
-
-.hero-buttons .hero-facebook:hover {
+.hero-buttons .hero-instagram { color: #E1306C; }
+.hero-buttons .hero-facebook { color: #5507f0; }
+.hero-buttons .hero-etsy { color: #F1641E; }
+.hero-buttons .hero-instagram:hover,
+.hero-buttons .hero-facebook:hover,
+.hero-buttons .hero-etsy:hover {
   transform: scale(1.2);
   opacity: 0.8;
 }
@@ -283,83 +301,84 @@ button:hover {
 
 /* Gallery */
 .gallery {
-  justify-items: center;   /* centers every image */
-  align-items: center;     /* vertical alignment */
-  justify-content: center; /* keeps the grid centered */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 10px;
   background-color: #605e5e;
-}
-.gallery img {
+  padding: 10px 0 20px;
   width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-  will-change: transform;
-}
-
-.gallery img:hover {
-  transform: scale(1.01);
+  max-width: 100%;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .gallery-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 0rem;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
-.gallery-item img {
-  max-width: 100%;
-  height: auto;
+.gallery img {
+  width: 100%;
+  max-width: 450px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
   border-radius: 8px;
-  display: block;
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
-.gallery-item figcaption {
-  margin-top: 0.5rem;
-  font-size: 1.2rem;
-  text-align: center;
-  color: #222;
+.gallery img:hover {
+  transform: scale(1.01);
+}
+
+/* Single image page */
+.single-image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  padding: 20px 0;
 }
 
 .single-image-page {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;  /* no pushing content downward */
-  min-height: auto;             /* remove large forced height */
-  padding: 1rem 1rem 0.5rem;    /* much smaller bottom space */
-  background-color: #605e5e;
-  text-align: center;
-}
-
-.single-image-page button {
-  background-color: #709170;
-  color: white;
-  padding: 12px 24px;   /* slightly bigger for touch */
-  font-size: 1.05rem;   /* a little larger */
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-  margin-bottom: 1.5rem;  /* pull button closer to navbar */
-  
-}
-
-.single-image-page button:hover {
-  background-color: #3da33d;
 }
 
 .single-image-page img {
-  width: 100%;         
-  max-width: 600px;    
-  height: auto;        
+  width: 100%;
+  max-width: 600px;
   border-radius: 10px;
-  box-shadow: 0px 4px 12px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  margin-bottom: 20px;
 }
 
+.nav-arrow {
+  background: #709170;
+  color: white;
+  border: none;
+  padding: 14px 18px;
+  font-size: 1.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
 
+.nav-arrow:hover:not(:disabled) {
+  background: #3da33d;
+}
+
+.nav-arrow:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
 
 /* Footer */
 footer {
@@ -370,169 +389,37 @@ footer {
   margin-top: auto;
 }
 
-/* About & Events styling */
+/* About & Events */
 .about-section h2, .events-section h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
 }
-
 .about-section p {
   font-size: 1.2rem;
   line-height: 1.6;
   max-width: 800px;
   margin: 0 auto;
 }
-
 .events-section ul {
   list-style: none;
   padding: 0;
   margin: 1.5rem 0;
 }
-
 .events-section li {
   margin: 0.5rem 0;
   font-size: 1.1rem;
 }
 
-/* Social icons */
-.social-link {
-  margin-top: 2rem;
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-.social-link a {
-  font-size: 2rem;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.social-link a:hover {
-  transform: scale(1.2);
-  opacity: 0.8;
-}
-
-/* About image */
-.about-image img {
-  max-width: 400px;
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
-  margin-top: 2rem;
-}
-
 /* Responsive Hamburger Menu */
 @media (max-width: 650px) {
-  nav ul {
-    display: none;
-  }
-  .hamburger {
-    display: block;
-    margin-top: 0px;
-    font-size: 2.0rem;
-    background: none;
-    cursor: pointer;
-    
-  }
-  .hamburger:hover {
-    background: none;
-    color: white; /* keep same color on hover */
-  }
-
-  .nav-overlay .menu-items a {
-    font-size: 1.5rem;
-    padding: 15px 20px;  /* keep padding balanced */
-    min-width: 200px;    /* enforce equal bubble size */
-  }
+  nav ul { display: none; }
+  .hamburger { display: block; }
+  .nav-overlay .menu-items a { font-size: 1.5rem; padding: 15px 20px; min-width: 200px; }
 }
 
-/* Active link styling without underline */
+/* Active link styling */
 .active-link {
   text-decoration: none;
   font-weight: bold;
   color: white;
-}
-
-/* Back + Message block */
-.back-message {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.bag-caption {
-  font-size: 1.4rem;
-  font-weight: bold;
-  padding-top: 25px;
-}
-
-/* Purchase message text */
-.purchase-text {
-  font-size: 1.2rem;
-  max-width: 650px;
-  text-align: center;
-}
-
-/* Inline link with icon */
-.imgPage-link {
-  display: inline-flex;      /* inline + flex for alignment */
-  align-items: center;       /* vertically center icon + text */
-  gap: 0.3rem;               /* small space between text & icon */
-  font-weight: bold;
-  text-decoration: none;
-  color: inherit;
-}
-
-.imgPage-link:hover {
-  opacity: 0.75;
-}
-
-/* Social icons sizing */
-.social-icon {
-  font-size: 1rem;           /* match text height */
-  line-height: 1;            /* prevent extra spacing */
-  vertical-align: middle;    /* align with text middle */
-}
-
-/* Brand colors */
-.social-icon.facebook {
-  color: #1877F2;
-}
-
-.social-icon.instagram {
-  color: #E1306C;
-}
-
-.hero-buttons .hero-etsy {
-  display: flex;
-  align-items: center;
-  font-size: 3.0rem;
-  color: #F1641E; /* Etsy brand orange */
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.hero-etsy {
-  padding-top: 20px;
-}
-
-.hero-buttons .hero-etsy:hover {
-  transform: scale(1.2);
-  opacity: 0.8;
-}
-
-nav li a.etsy-link {
-  font-size: 2.3rem;
-  color: #F1641E; /* Etsy orange */
-  line-height: 1;
-}
-
-nav li a.etsy-link:hover {
-  color: white;
-}
-
-.nav-overlay .etsy-link {
-  font-size: 1.5rem;
-  background-color: #709170; /* matches other bubbles */
-  color: #F1641E;
 }
