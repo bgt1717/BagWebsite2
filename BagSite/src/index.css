@@ -152,31 +152,15 @@ nav li a.etsy-link:hover {
 
 /* Hamburger button */
 .hamburger {
-  display: none;           /* hidden on desktop */
+  display: none;
   font-size: 2rem;
+  cursor: pointer;
   background: none;
   border: none;
   color: white;
-
-  /* Flex centering */
-  display: flex;
-  align-items: center;     /* vertical center */
-  justify-content: center;
-
-  height: 60px;            /* same as navbar height */
-  margin: 0;               /* remove any extra margin */
-  padding: 0;              /* remove any extra padding */
-  line-height: 1;          /* prevent line-height adding space */
-  cursor: pointer;
+  flex-shrink: 0;
+  margin: -4px -15px 0 0;  /* <-- move it up slightly */
 }
-
-/* Show on mobile */
-@media (max-width: 650px) {
-  .hamburger {
-    display: flex;
-  }
-}
-
 
 /* Vertical overlay menu */
 .nav-overlay {
@@ -295,6 +279,7 @@ button {
   margin-top: 20px;
 }
 
+
 button:hover {
   background-color: #3da33d;
 }
@@ -321,6 +306,14 @@ button:hover {
   margin: 0;
   padding: 0;
   width: 100%;
+}
+
+@media (max-width: 650px) {
+  /* Disable clicking on gallery links */
+  .gallery-item a {
+    pointer-events: none;   /* disables link */
+    cursor: default;        /* optional: change cursor */
+  }
 }
 
 .gallery img {
